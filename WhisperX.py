@@ -14,8 +14,6 @@ import argparse
 
 from utils_git import format_time, save_transcription, whisperx_to_csv
 
-HF_TOKEN = ''
-
 def main():
     # Initialize the argument parser with a description.
     parser = argparse.ArgumentParser(description="Script for transcription and diarization")
@@ -79,7 +77,7 @@ def main():
             result = whisperx.align(result["segments"], model_a, metadata, audio, device, return_char_alignments=False)
 
             # 3. Assign speaker labels
-            diarize_model = whisperx.DiarizationPipeline(use_auth_token=HF_TOKEN, device=device)
+            diarize_model = whisperx.DiarizationPipeline(use_auth_token=args.hf_token, device=device)
 
             # add min/max number of speakers if known
             diarize_segments = diarize_model(audio, min_speakers=args.min_speakers, max_speakers=args.max_speakers)
