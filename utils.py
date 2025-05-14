@@ -39,7 +39,7 @@ def save_transcription(result, audio_file_path, output_dir="transcriptions"):
             text = segment.get("text", "")
             writer.writerow([format_time(start_time), format_time(end_time), text])
     
-    print(f"Transcription saved to {output_file}\n")
+    print(f"Transcription saved to {output_file}")
 
 def whisperx_to_csv(result, audio_file, output_dir="diarizations"):
 
@@ -88,4 +88,4 @@ def whisperx_to_csv(result, audio_file, output_dir="diarizations"):
         writer.writerow(['Start', 'End', 'Speaker', 'Text'])
         writer.writerows(rows)
 
-    print(f"Diarization file saved to: {output_file}\n")
+    print(f"Diarization file saved to: {output_file}")
