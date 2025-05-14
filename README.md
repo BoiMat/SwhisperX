@@ -19,7 +19,7 @@ You can run everything **inside the whisperx container** (if available) or direc
   ```
 
 * **Huggingface Token**:\
-  For speaker diarization you **must** supply an HF token with access to the [`pyannote/speaker-diarization-3.1`](https://huggingface.co/pyannote/speaker-diarization-3.1) model.
+  For speaker diarization, you **must** supply an HF token with access to the [`pyannote/speaker-diarization-3.1`](https://huggingface.co/pyannote/speaker-diarization-3.1) model.
 
 ---
 
@@ -62,6 +62,9 @@ Here are the available command-line options and what they do:
 * **--transcriptions\_path**
   (Optional) Folder to which the generated transcription CSVs are written (if not set, the default location is the "transcriptions" folder in the same parent directory as the audio folders).
 
+* **--word\_timestamps\_path**
+  (Optional) Folder to which the generated per-word timestamps CSVs are written (only if you enable word timestamps, if not set, the default location is the "word_timestamps" folder in the same parent directory as the audio folders).
+
 * **--diarizations\_path**
   (Optional) Folder to which the speaker-diarization outputs are written (only if you enable diarization, if not set, the default location is the "diarizations" folder in the same parent directory as the audio folders).
 
@@ -82,6 +85,9 @@ Here are the available command-line options and what they do:
 
 * **--hf\_token**
   Your Hugging Face access token (required if you use diarization).
+
+* **--word_timestamps**
+  Flag to turn on word-level alignment.
 
 * **--diarize**
   Flag to turn on speaker diarization (requires `--hf_token` and `pyannote/speaker-diarization-3.1`).
