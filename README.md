@@ -62,13 +62,13 @@ Here are the available command-line options and what they do:
   Folder where your input audio files live (default: `audio_files`).
 
 * **--transcriptions\_path**
-  (Optional) Folder to which the generated transcription CSVs are written (default: <parent>/transcriptions).
+  (Optional) Folder to which the generated transcription CSVs are written (default: \<parent-dir-of-audios-path\>/transcriptions).
 
 * **--word\_timestamps\_path**
-  (Optional) Folder to which the generated per-word timestamps CSVs are written (only if you enable `--word_timestamps`, default: <parent>/word_timestamps).
+  (Optional) Folder to which the generated per-word timestamps CSVs are written (only if you enable `--word_timestamps`, default: \<parent\>/word_timestamps).
 
 * **--diarizations\_path**
-  (Optional) Folder to which the speaker-diarization outputs are written (only if you enable `--diarize`, default: <parent>/diarizations).
+  (Optional) Folder to which the speaker-diarization outputs are written (only if you enable `--diarize`, default: \<parent\>/diarizations).
 
 * **--whisper\_model**
   Which Whisper model to use (default: current best Swiss German Whisper model trained by DSL).
