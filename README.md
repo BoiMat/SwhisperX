@@ -4,8 +4,8 @@
 
 This repository provides:
 
-- **`finetune.py`**: Script to fine-tune a Whisper model on your data.
 - **`WhisperX.py`**: Script to transcribe (and optionally diarize) audio using WhisperX.
+- **`finetune.py`**: Script to fine-tune a Whisper model on your data.
 
 You can run everything **inside the whisperx container** (if available) or directly in your Python environment.
 
@@ -60,19 +60,19 @@ Here are the available command-line options and what they do:
   Folder where your input audio files live (default: `audio_files`).
 
 * **--transcriptions\_path**
-  Folder to write the generated transcription CSVs (if not set, prints to stdout or default location).
+  (Optional) Folder to which the generated transcription CSVs are written (if not set, the default location is the "transcriptions" folder in the same parent directory as the audio folders).
 
 * **--diarizations\_path**
-  Folder to write speaker-diarization outputs (only if you enable diarization).
+  (Optional) Folder to which the speaker-diarization outputs are written (only if you enable diarization, if not set, the default location is the "diarizations" folder in the same parent directory as the audio folders).
 
 * **--whisper\_model**
-  Which Whisper checkpoint to use for transcription (e.g. `small.en`, `openai/whisper-large`).
+  Which Whisper checkpoint to use for transcription (e.g., `small.en`, `openai/whisper-large`).
 
 * **--alignment\_model**
   (Optional) Forced-alignment model to use for precise word-level timestamps.
 
 * **--language**
-  ISO language code of the audio (default: `de` for German).
+  ISO language code of the audio (default: `de` for German). It automatically sets the alignment model based on WhisperX default choice for the specified language. 
 
 * **--min\_speakers**
   (Optional) Minimum number of speakers to detect when diarizing.
