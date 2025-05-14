@@ -60,22 +60,22 @@ Here are the available command-line options and what they do:
   Folder where your input audio files live (default: `audio_files`).
 
 * **--transcriptions\_path**
-  (Optional) Folder to which the generated transcription CSVs are written (if not set, the default location is the "transcriptions" folder in the same parent directory as the audio folders).
+  (Optional) Folder to which the generated transcription CSVs are written (default: <parent>/transcriptions).
 
 * **--word\_timestamps\_path**
-  (Optional) Folder to which the generated per-word timestamps CSVs are written (only if you enable word timestamps, if not set, the default location is the "word_timestamps" folder in the same parent directory as the audio folders).
+  (Optional) Folder to which the generated per-word timestamps CSVs are written (only if you enable `--word_timestamps`, default: <parent>/word_timestamps).
 
 * **--diarizations\_path**
-  (Optional) Folder to which the speaker-diarization outputs are written (only if you enable diarization, if not set, the default location is the "diarizations" folder in the same parent directory as the audio folders).
+  (Optional) Folder to which the speaker-diarization outputs are written (only if you enable `--diarize`, default: <parent>/diarizations).
 
 * **--whisper\_model**
-  Which Whisper checkpoint to use for transcription (e.g., `small.en`, `openai/whisper-large`).
+  Which Whisper model to use (default: current best Swiss German Whisper model trained by DSL).
 
 * **--alignment\_model**
-  (Optional) Forced-alignment model to use for precise word-level timestamps.
+  (Optional) Forced-alignment model to use for precise word-level timestamps (default: set automatically by WhisperX based on the language).
 
 * **--language**
-  ISO language code of the audio (default: `de` for German). It automatically sets the alignment model based on WhisperX default choice for the specified language. 
+  ISO language code of the audio (default: `de` for German).
 
 * **--min\_speakers**
   (Optional) Minimum number of speakers to detect when diarizing.
@@ -87,7 +87,7 @@ Here are the available command-line options and what they do:
   Your Hugging Face access token (required if you use diarization).
 
 * **--word_timestamps**
-  Flag to turn on word-level alignment.
+  Flag to turn on word-level alignment and per-word timestamps saved.
 
 * **--diarize**
   Flag to turn on speaker diarization (requires `--hf_token` and `pyannote/speaker-diarization-3.1`).
