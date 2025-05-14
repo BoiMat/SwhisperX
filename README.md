@@ -36,21 +36,23 @@ python3 WhisperX_git.py \
     --whisper_model openai/whisper-large
 ```
 
-### 2.2 Transcription + Diarization
+### 2.2 Transcription + Word timestamps + Diarization
 
 ```bash
 apptainer exec --nv whisperx.sif \
   python3 WhisperX_git.py \
     --audios_path ./my_audio \
     --transcriptions_path ./my_transcripts \
+    --word_timestamps_path ./my_word_timestamps \
     --diarizations_path ./my_diarizations \
     --whisper_model openai/whisper-large \
     --hf_token $HF_TOKEN \
-    --diarize \
+    --word_timestamps \
+    --diarize
 ```
 
 * `--hf_token` must be a token **with access** to the Pyannote speaker-diarization-3.1 model.
-* Adjust `--min_speakers`/`--max_speakers` to your data.
+* If known, adjust `--min_speakers`/`--max_speakers` to your data.
 
 ---
 ### 2.3 Command-Line Arguments
