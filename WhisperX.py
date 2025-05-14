@@ -75,7 +75,7 @@ def main():
     model = whisperx.load_model(args.whisper_model, device=device, compute_type=compute_type, language=args.language)
 
     for i, audio_file in enumerate(audio_files, start=1):
-        print(f"Processing {i}/{len(audio_files)}: {audio_file!r}")
+        print(f"\nProcessing {i}/{len(audio_files)}: {audio_file!r}")
 
         audio = whisperx.load_audio(audio_file)
         result = model.transcribe(audio, batch_size=batch_size)
